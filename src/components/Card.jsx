@@ -1,20 +1,19 @@
 import Link from "next/link";
-import sundialhome_2 from "../assets/Header-images/sundialhome-2.png";
 
-const Card = ({}) => {
+const Card = ({ data }) => {
   return (
-    <div className="flex">
+    <div className="flex text-center mt-4">
       <Link
         href="/"
-        className="p-2 overflow-auto rounded-lg border border-transparent hover:border-light_black hover:shadow-lg shadow-black "
+        className="w-full p-1 pb-4 overflow-auto rounded-lg border border-transparent hover:border-light_black hover:shadow-lg shadow-black "
       >
         <img
-          className="rounded w-full w-full"
-          src={sundialhome_2.src}
+          className="rounded w-full"
+          src={data.img_uri}
           alt="sundialhome_2"
         />
-        <h2>Console Tables</h2>
-        <p className="mt-2 ">Shop Accent Tables</p>
+        <h2 className="font-bold text-xl mt-3">{data?.title}</h2>
+        <p className="my-2 ">{data?.disc}</p>
       </Link>
     </div>
   );
